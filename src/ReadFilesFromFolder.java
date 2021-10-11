@@ -86,9 +86,9 @@ public class ReadFilesFromFolder {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\nEnter a file name to remove from the given list: ");
 		String filename = sc.nextLine();
-		
+
 		File file = new File(MainMenu.folderPath + "\\" + filename);
-		
+
 		if (file.delete()) {
 			System.out.println("\nFile deleted successfully\n\nHere is the updated list:\n");
 			showFiles();
@@ -96,23 +96,43 @@ public class ReadFilesFromFolder {
 			System.out.println("Failed to delete the file");
 		}
 	}
-	
+
 	public void searchFile() {
 		ArrayList<String> fileList = getAllFiles(MainMenu.folderObject);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\nEnter a file name to search: ");
 		String filename = sc.nextLine();
-		Iterator<String> it = fileList.iterator();
-		boolean fileFound = false;
-		while (it.hasNext()) {
-			if(filename.equals(it.next())) {
-				fileFound = true;
-				System.out.println("File found !!!");
-				break;
-			}
-		}
-		if(!fileFound) {
+		
+		Object[] arr = fileList.toArray();
+		
+		int searchResult = binarySearch(arr, filename);
+		if(searchResult == -1) {
 			System.out.println("File not found");
+		} else {
+			System.out.println("File found !!!");
 		}
+	}
+
+	public int binarySearch(Object[] arr, String x) {
+		int l = 0, r = arr.length - 1;
+		while (l <= r) {
+			int m = l + (r - l) / 2;
+
+			int res = x.compareTo((String)arr[m]);
+
+			// Check if x is present at mid
+			if (res == 0)
+				return m;
+
+			// If x greater, ignore left half
+			if (res > 0)
+				l = m + 1;
+
+			// If x is smaller, ignore right half
+			else
+				r = m - 1;
+		}
+
+		return -1;
 	}
 }

@@ -4,7 +4,7 @@ import java.util.*;
 public class MainMenu {
 	static final String folderPath = "C:\\Users\\shyam\\Desktop\\Simplilearn Videos\\Phase1Project\\LockedMe";
 	static File folderObject = null;
-	static int optionValue = -1;
+	static String optionValue = "";
 	static Scanner sc = null;
 
 	static void getMenu() {
@@ -27,26 +27,26 @@ public class MainMenu {
 
 		ReadFilesFromFolder rd = new ReadFilesFromFolder();
 		if (sc.hasNext()) {
-			MainMenu.optionValue = sc.nextInt();
+			MainMenu.optionValue = sc.next();
 		}
 
 		switch (MainMenu.optionValue) {
-		case 1:
+		case "1":
 			rd.showFiles();
 			break;
-		case 2:
+		case "2":
 			rd.sortFiles();
 			break;
-		case 3:
+		case "3":
 			rd.addNewFile();
 			break;
-		case 4:
+		case "4":
 			rd.removeFile();
 			break;
-		case 5:
+		case "5":
 			rd.searchFile();
 			break;
-		case 6:
+		case "6":
 			System.out.println("Bye..");
 			break;
 		default:
@@ -63,14 +63,23 @@ public class MainMenu {
 		do {
 			if (count == 0) {
 				System.out.println("Welcome to LockedMe !!");
+				System.out.println("***************************");
+				System.out.println("Created by - Nidhi Prajapati");
+				System.out.println("***************************");
 				System.out.println("\nChoose an option:");
+				System.out.println("***************************");
 				count++;
 			} else {
-				System.out.println("\n\nTry again, choose an option: \n");
+				System.out.println("\n\nTry again, choose an option:");
+				System.out.println("***************************");
 			}
 			MainMenu.getMenu();
 			MainMenu.chooseOption();
-		} while (MainMenu.optionValue < 6);
+		} while (MainMenu.optionValue == "1" || 
+				MainMenu.optionValue == "2" ||
+				MainMenu.optionValue == "3" ||
+				MainMenu.optionValue == "4" ||
+				MainMenu.optionValue == "5");
 
 		sc.close();
 	}
