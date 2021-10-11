@@ -125,7 +125,7 @@ public class ReadFilesFromFolder {
 		while (l <= r) {
 			int m = l + (r - l) / 2;
 
-			int res = x.compareTo((String)arr[m]);
+			int res = x.toLowerCase().compareTo(((String)arr[m]).toLowerCase());
 
 			// Check if x is present at mid
 			if (res == 0)
