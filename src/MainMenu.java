@@ -2,7 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class MainMenu {
-	static final String folderPath = "C:\\Users\\shyam\\Desktop\\Simplilearn Videos\\Phase1Project\\LockedMe";
+	//static final String folderPath = "C:\\Users\\shyam\\Desktop\\Simplilearn Videos\\Phase1Project\\LockedMe";
+	static final String folderPath = "./Locker";
+	
 	static File folderObject = null;
 	static String optionValue = "";
 	static Scanner sc = null;
