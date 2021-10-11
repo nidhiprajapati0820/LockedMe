@@ -24,7 +24,7 @@ public class MainMenu {
 	}
 
 	static void chooseOption() {
-		System.out.println("Choose an option:");
+
 		ReadFilesFromFolder rd = new ReadFilesFromFolder();
 		if (sc.hasNext()) {
 			MainMenu.optionValue = sc.nextInt();
@@ -55,12 +55,23 @@ public class MainMenu {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to LockedMe !!");
 
 		sc = new Scanner(System.in);
-		MainMenu.getMenu();
+
 		MainMenu.folderObject = new File(MainMenu.folderPath);
-		MainMenu.chooseOption();
+		int count = 0;
+		do {
+			if (count == 0) {
+				System.out.println("Welcome to LockedMe !!");
+				System.out.println("\nChoose an option:");
+				count++;
+			} else {
+				System.out.println("\n\nTry again, choose an option: \n");
+			}
+			MainMenu.getMenu();
+			MainMenu.chooseOption();
+		} while (MainMenu.optionValue < 6);
+
 		sc.close();
 	}
 }

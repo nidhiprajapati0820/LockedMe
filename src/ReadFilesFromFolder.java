@@ -70,7 +70,7 @@ public class ReadFilesFromFolder {
 					myWriter.write(content);
 					myWriter.close();
 
-					System.out.printf("Successfully created new file: \n%s%n with content \n%s", myFile, content);
+					System.out.printf("Successfully created new file: " + filename);
 				} catch (Exception e) {
 					System.out.println("File i/o exception");
 				}
@@ -79,7 +79,6 @@ public class ReadFilesFromFolder {
 				System.out.printf("Failed to create new file: %s%n", myFile);
 			}
 		}
-		sc.close();
 	}
 
 	public void removeFile() {
@@ -96,7 +95,6 @@ public class ReadFilesFromFolder {
 		} else {
 			System.out.println("Failed to delete the file");
 		}
-		sc.close();
 	}
 	
 	public void searchFile() {
@@ -116,6 +114,5 @@ public class ReadFilesFromFolder {
 		if(!fileFound) {
 			System.out.println("File not found");
 		}
-		sc.close();
 	}
 }
