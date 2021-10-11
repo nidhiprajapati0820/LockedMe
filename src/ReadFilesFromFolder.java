@@ -90,17 +90,18 @@ public class ReadFilesFromFolder {
 	public void removeFile() {
 		showFiles();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\nEnter a file name to remove from the given list: ");
+		System.out.println("\nEnter a file name to remove from the given list or press ENTER go to Main menu: ");
 		String filename = sc.nextLine();
-
-		File file = new File(MainMenu.folderPath + "\\" + filename);
-
-		if (file.delete()) {
-			System.out.println("\nFile deleted successfully\n\nHere is the updated list:\n");
-			showFiles();
-		} else {
-			System.out.println("Failed to delete the file");
+		if(!filename.equals("")) {
+			File file = new File(MainMenu.folderPath + "\\" + filename);
+			if (file.delete()) {
+				System.out.println("\nFile deleted successfully\n\nHere is the updated list:\n");
+				showFiles();
+			} else {
+				System.out.println("Failed to delete the file");
+			}
 		}
+		
 	}
 
 	public void searchFile() {
