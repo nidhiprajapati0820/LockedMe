@@ -26,9 +26,7 @@ public class MainMenu {
 	static void chooseOption() {
 
 		ReadFilesFromFolder rd = new ReadFilesFromFolder();
-		if (sc.hasNext()) {
-			MainMenu.optionValue = sc.next();
-		}
+		MainMenu.optionValue = sc.next();
 
 		switch (MainMenu.optionValue) {
 		case "1":
@@ -47,7 +45,9 @@ public class MainMenu {
 			rd.searchFile();
 			break;
 		case "6":
-			System.out.println("Bye..");
+			System.out.println("***************************");
+			System.out.println("GoodBye..");
+			System.out.println("***************************");
 			break;
 		default:
 			System.out.println("Invalid option");
@@ -75,11 +75,11 @@ public class MainMenu {
 			}
 			MainMenu.getMenu();
 			MainMenu.chooseOption();
-		} while (MainMenu.optionValue == "1" || 
-				MainMenu.optionValue == "2" ||
-				MainMenu.optionValue == "3" ||
-				MainMenu.optionValue == "4" ||
-				MainMenu.optionValue == "5");
+		} while (MainMenu.optionValue.equals("1") || 
+				MainMenu.optionValue.equals("2") ||
+				MainMenu.optionValue.equals("3") ||
+				MainMenu.optionValue.equals("4") ||
+				MainMenu.optionValue.equals("5"));
 
 		sc.close();
 	}

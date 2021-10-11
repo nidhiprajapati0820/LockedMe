@@ -28,6 +28,9 @@ public class ReadFilesFromFolder {
 	}
 
 	public void showFiles() {
+		System.out.println("*************************************");
+		System.out.println("Here is the list of available files:");
+		System.out.println("*************************************");
 		ArrayList<String> fileList = getAllFiles(MainMenu.folderObject);
 		Iterator<String> it = fileList.iterator();
 		while (it.hasNext()) {
@@ -36,6 +39,9 @@ public class ReadFilesFromFolder {
 	}
 
 	public void sortFiles() {
+		System.out.println("**********************************************");
+		System.out.println("Here is the list in reverse alphabetic order:");
+		System.out.println("**********************************************");
 		ArrayList<String> fileList = getAllFiles(MainMenu.folderObject);
 		Collections.reverse(fileList);
 		Iterator<String> it = fileList.iterator();
