@@ -90,9 +90,7 @@ public class ReadFilesFromFolder {
 	public void removeFile() {
 		showFiles();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\n***************************************************************");
-		System.out.println("Enter a file name to remove from the given list or press ENTER go to Main menu: ");
-		System.out.println("***************************************************************");
+		System.out.println("\nEnter a file name to remove from the given list or press ENTER go to Main menu: ");
 		String filename = sc.nextLine();
 		if(!filename.equals("")) {
 			File file = new File(MainMenu.folderPath + "\\" + filename);

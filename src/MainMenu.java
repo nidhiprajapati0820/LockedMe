@@ -77,11 +77,7 @@ public class MainMenu {
 			}
 			MainMenu.getMenu();
 			MainMenu.chooseOption();
-		} while (MainMenu.optionValue.equals("1") || 
-				MainMenu.optionValue.equals("2") ||
-				MainMenu.optionValue.equals("3") ||
-				MainMenu.optionValue.equals("4") ||
-				MainMenu.optionValue.equals("5"));
+		} while (!MainMenu.optionValue.equals("6"));
 
 		sc.close();
 	}
